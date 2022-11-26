@@ -37,26 +37,29 @@ fi
 
 # ------ Add solution1 ------
 
-if [ -e "./solution1.ts" ]; then
+if [ -e "./solution1.ts" ];
+  then
     echo "Solution for $year/$day already exists"
-    exit 1;
+  else
+    cp "../../.././template/solution-starter.ts" "./solution1.ts"
+
+    sed -i "s/const year = -1;/const year = $year;/" ./solution1.ts
+    sed -i "s/const day = -1;/const day = $day;/" ./solution1.ts
+    sed -i "s/const solutionNumber = -1;/const solutionNumber = 1;/" ./solution1.ts
 fi
 
-cp "../../.././template/solution-starter.ts" "./solution1.ts"
-
-sed -i "s/const year = -1;/const year = $year;/" ./solution1.ts
-sed -i "s/const day = -1;/const day = $day;/" ./solution1.ts
-sed -i "s/const solutionNumber = -1;/const solutionNumber = 1;/" ./solution1.ts
 
 # ------ Add solution2 ------
 
-if [ -e "./solution2.ts" ]; then
+if [ -e "./solution2.ts" ];
+  then
     echo "Solution for $year/$day already exists"
-    exit 1;
+  else
+    cp "../../.././template/solution-starter.ts" "./solution2.ts"
+
+    sed -i "s/const year = -1;/const year = $year;/" ./solution2.ts
+    sed -i "s/const day = -1;/const day = $day;/" ./solution2.ts
+    sed -i "s/const solutionNumber = -1;/const solutionNumber = 2;/" ./solution2.ts
 fi
 
-cp "../../.././template/solution-starter.ts" "./solution2.ts"
-
-sed -i "s/const year = -1;/const year = $year;/" ./solution2.ts
-sed -i "s/const day = -1;/const day = $day;/" ./solution2.ts
-sed -i "s/const solutionNumber = -1;/const solutionNumber = 2;/" ./solution2.ts
+npm run start "src/$year/$day/solution1.ts"
