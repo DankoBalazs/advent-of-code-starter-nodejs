@@ -1,15 +1,13 @@
 // @ts-ignore
 import * as utils from "../../utils";
+import { logSolution } from "../src/utils";
 
 let year = -1;
 let day = -1;
 
-let result = "Implement a solution";
+let result = "Implement solution";
 
-const lineCallback = (line: string) => {
-  // TODO add solution
-};
+const file: string = utils.getFileSync(year, day);
+console.log(file);
 
-utils.forEachLineInFile(year, day, lineCallback).then(() => {
-  utils.submitSolution(result);
-});
+logSolution(result);

@@ -1,4 +1,4 @@
-## Nodejs project for [AdventOfCode](https://adventofcode.com/)
+## Nodejs starter project for [AdventOfCode](https://adventofcode.com/)
 
 ## Get token 
  - Sign in 
@@ -6,18 +6,22 @@
  - open Application tab
  - select Cookies 
  - your 'token' is the value of the 'session'' cookie
+ - **Create a file named *token.txt*** 
+ - paste your token to the file (token.txt is in .gitignore)
 
 ## Start new challenge
 Creates the folders and the template files, and downloads your input file.
 ```shell
- ./init-aoc.sh -y {{year}} -d {{day}} -t {{token}}
+ ./init-aoc.sh -y {{year}} -d {{day}}
  ```
-
 
 ## Run project 
 
 ```shell
- npm run start {{year}}/{{day}}/solution.ts
+ npm run start {{year}}/{{day}}/solution1.ts
+ ```
+```shell
+ npm run start {{year}}/{{day}}/solution2.ts
  ```
 
 
