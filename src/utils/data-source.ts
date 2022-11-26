@@ -16,15 +16,26 @@ export async function forEachLineInFile(
   }
 }
 
+export async function getLines(year: number, day: number): Promise<string[]> {
+  const lineReader = ReadLine.createInterface({
+    input: FileSystem.createReadStream(`./src/${year}/${day}/input.txt`),
+  });
+  let lines: string[] = [];
+  for await (let line of lineReader) {
+    lines.push(line);
+  }
+  return lines;
+}
+
 export function getFileSync(year: number, day: number) {
   return readFileSync(`./src/${year}/${day}/input.txt`, {
     encoding: "utf-8",
   });
 }
 
-export function linesAsObservable(path: string) {
+export function linesAsObservable(year: number, day: number) {
   const lineReader = ReadLine.createInterface({
-    input: FileSystem.createReadStream(path),
+    input: FileSystem.createReadStream(`./src/${year}/${day}/input.txt`),
   });
   return fromEvent<string>(lineReader, "line", (x) => x).pipe(
     takeUntil(fromEvent(lineReader, "close"))

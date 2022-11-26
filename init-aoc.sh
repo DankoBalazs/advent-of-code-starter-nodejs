@@ -44,8 +44,9 @@ fi
 
 cp "../../.././template/solution-starter.ts" "./solution1.ts"
 
-sed -i "s/let year = -1;/let year = $year;/" ./solution1.ts
-sed -i "s/let day = -1;/let day = $day;/" ./solution1.ts
+sed -i "s/const year = -1;/const year = $year;/" ./solution1.ts
+sed -i "s/const day = -1;/const day = $day;/" ./solution1.ts
+sed -i "s/const solutionNumber = -1;/const solutionNumber = 1;/" ./solution1.ts
 
 # ------ Add solution2 ------
 
@@ -56,5 +57,6 @@ fi
 
 cp "../../.././template/solution-starter.ts" "./solution2.ts"
 
-sed -i "s/let year = -1;/let year = $year;/" ./solution2.ts
-sed -i "s/let day = -1;/let day = $day;/" ./solution2.ts
+sed -i "s/const year = -1;/const year = $year;/" ./solution2.ts
+sed -i "s/const day = -1;/const day = $day;/" ./solution2.ts
+sed -i "s/const solutionNumber = -1;/const solutionNumber = 2;/" ./solution2.ts

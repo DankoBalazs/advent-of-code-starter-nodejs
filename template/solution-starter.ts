@@ -1,13 +1,17 @@
 // @ts-ignore
 import * as utils from "../../utils";
-import { logSolution } from "../src/utils";
 
-let year = -1;
-let day = -1;
+const year = -1;
+const day = -1;
+const solutionNumber = -1;
 
-let result = "Implement solution";
+utils.getLines(year, day).then((lines: string[]) => {
+  let result = calculateResult(lines);
+  utils.logResult(result);
+  // utils.submitResult(year, day, solutionNumber, result);  // Don't overuse it! The timeout between submits are going to increase.
+});
 
-const file: string = utils.getFileSync(year, day);
-console.log(file);
-
-logSolution(result);
+function calculateResult(lines: string[]): any {
+  // TODO Implement solution
+  return undefined;
+}
