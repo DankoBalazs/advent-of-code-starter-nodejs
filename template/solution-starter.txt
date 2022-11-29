@@ -1,9 +1,8 @@
-// @ts-ignore
 import * as utils from "../../utils";
 
-const year = -1;
-const day = -1;
-const solutionNumber = -1;
+{{year}}
+{{day}}
+{{solutionNumber}}
 
 utils.getLines(year, day).then((lines: string[]) => {
   let result = calculateResult(lines);

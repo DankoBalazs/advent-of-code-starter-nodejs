@@ -41,11 +41,11 @@ if [ -e "./solution1.ts" ];
   then
     echo "Solution for $year/$day already exists"
   else
-    cp "../../.././template/solution-starter.ts" "./solution1.ts"
+    cp "../../.././template/solution-starter.txt" "./solution1.ts"
 
-    sed -i "s/const year = -1;/const year = $year;/" ./solution1.ts
-    sed -i "s/const day = -1;/const day = $day;/" ./solution1.ts
-    sed -i "s/const solutionNumber = -1;/const solutionNumber = 1;/" ./solution1.ts
+    sed -i "s/{{year}}/const year = $year;/" ./solution1.ts
+    sed -i "s/{{day}}/const day = $day;/" ./solution1.ts
+    sed -i "s/{{solutionNumber}}/const solutionNumber = 1;/" ./solution1.ts
 fi
 
 
@@ -55,11 +55,11 @@ if [ -e "./solution2.ts" ];
   then
     echo "Solution for $year/$day already exists"
   else
-    cp "../../.././template/solution-starter.ts" "./solution2.ts"
+    cp "../../.././template/solution-starter.txt" "./solution2.ts"
 
-    sed -i "s/const year = -1;/const year = $year;/" ./solution2.ts
-    sed -i "s/const day = -1;/const day = $day;/" ./solution2.ts
-    sed -i "s/const solutionNumber = -1;/const solutionNumber = 2;/" ./solution2.ts
+    sed -i "s/{{year}}/const year = $year;/" ./solution2.ts
+    sed -i "s/{{day}}/const day = $day;/" ./solution2.ts
+    sed -i "s/{{solutionNumber}}/const solutionNumber = 2;/" ./solution2.ts
 fi
 
 npm run start "src/$year/$day/solution1.ts"
