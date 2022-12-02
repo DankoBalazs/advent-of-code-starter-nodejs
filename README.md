@@ -25,5 +25,5 @@ Creates the folders and the template files, and downloads your input file.
  npm run start src/{{year}}/{{day}}/solution1.ts
  ```
 ```shell
- npm run start {src/{year}}/{{day}}/solution2.ts
+ npm run start src/{{year}}/{{day}}/solution2.ts
  ```
